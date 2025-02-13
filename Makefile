@@ -8,7 +8,7 @@ migrate:
 	docker compose run --rm --no-deps web bundle exec rails db:migrate
 
 web:
-	docker compose up --no-deps web
+	docker compose up --no-deps -d web
 
 test_web:
 	docker compose -f docker-compose.test.yml up --no-deps -d test_web
