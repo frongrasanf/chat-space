@@ -13,8 +13,13 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(message_params)
+    @message = Message.new(message_params.except(:image))
     if @message.save
+      if message_params[:image].present?
+        file_path = "uploads/message/#{@message.id}/#{message_params[:image].original_filename}"
+        Google::StorageWrapper.new.upload_image(message_params[:image].tempfile.path, file_path)
+        @message.update(image: file_path)
+      end
       respond_to do |format|
         format.html { redirect_to chat_group_messages_path(@chat_group) }
         format.json

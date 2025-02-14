@@ -65,7 +65,7 @@ $(function() {
       });
     }
   };
-  var timer = setInterval(function() { autoReflesh() }, 3000);
+  // var timer = setInterval(function() { autoReflesh() }, 3000);
 });
 
 

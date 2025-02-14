@@ -26,11 +26,9 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'devise', '~> 4.4'
 
-gem 'carrierwave', '~> 1.0'
-
 gem 'dotenv-rails', '~> 2.2'
 
-gem 'fog', '~> 1.38'
+gem 'google-cloud-storage'
 
 gem 'rmagick', '~> 2.15', '>= 2.15.4'
 
